@@ -1,5 +1,6 @@
 Project::Application.routes.draw do
-  get "trainees/new"
+  resources :trainees
+  resources :supervisors
   get "trainees/show"
   get "trainees/edit"
   get "trainees/create"
@@ -11,6 +12,10 @@ Project::Application.routes.draw do
   get "supervisors/create"
   get "supervisors/update"
   get "supervisors/destroy"
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signup',  to: 'trainees#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
