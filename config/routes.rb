@@ -1,4 +1,16 @@
 Project::Application.routes.draw do
+  get "trainees/new"
+  get "trainees/show"
+  get "trainees/edit"
+  get "trainees/create"
+  get "trainees/update"
+  get "trainees/destroy"
+  get "supervisors/new"
+  get "supervisors/show"
+  get "supervisors/edit"
+  get "supervisors/create"
+  get "supervisors/update"
+  get "supervisors/destroy"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
